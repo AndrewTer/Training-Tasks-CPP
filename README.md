@@ -11,6 +11,11 @@ Define the class Students, which contains the following fields: private - studen
 
 ### [Working with the database using Qt](https://github.com/AndrewTer/Training-Tasks-CPP/tree/master/Working-With-The-Database-Using-Qt)
 
-Connecting to a database and retrieving information from a table using Qt. My first acquaintance with Qt Creator.
+Connecting to a database and retrieving information from a table using Qt in the console. My first acquaintance with Qt Creator.
 
 Database management system (RDBMS) - PostgreSQL.
+
+#### Results:
+
+
+![alt-текст](https://github.com/AndrewTer/Training-Tasks-CPP/blob/master/Working-With-The-Database-Using-Qt/results.png "Results")
