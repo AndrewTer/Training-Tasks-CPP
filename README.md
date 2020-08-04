@@ -19,3 +19,8 @@ Database management system (RDBMS) - PostgreSQL.
 
 
 ![alt-текст](https://github.com/AndrewTer/Training-Tasks-CPP/blob/master/Working-With-The-Database-Using-Qt/results.png "Results")
+
+### [Simple database client using Qt](https://github.com/AndrewTer/Training-Tasks-CPP/tree/master/Simple_DataBase_Client_Using_Qt)
+
+Client for connecting to database and outputting tables data.
+Not completed!
