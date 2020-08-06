@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "tableswindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,31 +27,41 @@ void MainWindow::on_pushButton_db_connect_clicked()
         // Вызов метода подключения к БД
         if (connectDB())
         {
+            ui->lineEdit_host_name->setText("");
+            ui->lineEdit_database_name->setText("");
+            ui->lineEdit_user_name->setText("");
+            ui->lineEdit_database_password->setText("");
+
+            // Открытие нового окна с выводом таблиц подключённой базы данных
+            TablesWindow *tablesdlg = new TablesWindow;
+            tablesdlg->show();
+            this->hide();
 
         }
-    } else
+    } else   
         ui->label_error_message->setText("Следует заполнить все поля ввода!");
 }
 
 // Метод подключения к БД
 bool MainWindow::connectDB()
 {
-    db_students = QSqlDatabase::addDatabase("QPSQL");
-    db_students.setHostName(host_name);
-    db_students.setDatabaseName(database_name);
-    db_students.setUserName(user_name);
-    db_students.setPassword(database_password);
+    db_instance = QSqlDatabase::addDatabase("QPSQL");
+    db_instance.setHostName(host_name);
+    db_instance.setDatabaseName(database_name);
+    db_instance.setUserName(user_name);
+    db_instance.setPassword(database_password);
 
-    if(!db_students.open())
+    if(!db_instance.open())
     {
         ui->label_error_message->setText("Не удалось подключиться к БД!");
         return false;
     }
 
-    ui->lineEdit_host_name->setText("");
-    ui->lineEdit_database_name->setText("");
-    ui->lineEdit_user_name->setText("");
-    ui->lineEdit_database_password->setText("");
-
     return true;
+}
+
+// Метод получения экземпляра подключения к БД
+QSqlDatabase MainWindow::getDB()
+{
+    return db_instance;
 }
