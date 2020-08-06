@@ -20,6 +20,9 @@ public:
     // Прототип метода подключения к БД
     bool connectDB();
 
+    // Прототип метода получения экземпляра подключения к БД
+    QSqlDatabase getDB();
+
 private slots:
     void on_pushButton_db_connect_clicked();
 
@@ -39,6 +42,6 @@ private:
     QString database_password;
 
     // Экземпляр подключения к БД
-    QSqlDatabase db_students;
+    QSqlDatabase db_instance;
 };
 #endif // MAINWINDOW_H
