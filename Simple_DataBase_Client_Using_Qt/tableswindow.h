@@ -5,6 +5,7 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QString>
+#include <QtSql/QSqlTableModel>
 
 namespace Ui {
 class TablesWindow;
@@ -21,8 +22,12 @@ public:
     // Прототип метода получения списка таблиц БД и занесения его в combobox
     bool fillComboboxWithAListOfTables();
 
+    // Прототип метода получения данных выбранной таблицы БД
+    void fillTableViewWithTheCurrentTableData(QString table_name);
+
 private slots:
     void on_pushButtonpushButton_db_disconnect_clicked();
+    void on_comboBox_tables_list_currentTextChanged(const QString &arg1);
 
 private:
     Ui::TablesWindow *ui;
