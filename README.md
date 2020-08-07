@@ -23,4 +23,28 @@ Database management system (RDBMS) - PostgreSQL.
 ### [Simple database client using Qt](https://github.com/AndrewTer/Training-Tasks-CPP/tree/master/Simple_DataBase_Client_Using_Qt)
 
 Client for connecting to database and outputting tables data.
-Not completed!
+
+Database management system (RDBMS) - PostgreSQL.
+
+#### Results:
+
+
+
+##### Main window with several blank fields
+
+
+![alt-текст](https://github.com/AndrewTer/Training-Tasks-CPP/blob/master/Simple_DataBase_Client_Using_Qt/results/Error_if_empty_fields.png "Error if empty fields")
+
+
+
+##### Main window in case of unsuccessful connection to the database
+
+
+![alt-текст](https://github.com/AndrewTer/Training-Tasks-CPP/blob/master/Simple_DataBase_Client_Using_Qt/results/Error_connecting_to_database.png "Error connecting to database")
+
+
+
+##### The window with the data of the database tables
+
+
+![alt-текст](https://github.com/AndrewTer/Training-Tasks-CPP/blob/master/Simple_DataBase_Client_Using_Qt/results/Outputting_tables.png "Outputting tables")
