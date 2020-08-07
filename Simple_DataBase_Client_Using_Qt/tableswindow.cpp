@@ -8,7 +8,8 @@ TablesWindow::TablesWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    fillComboboxWithAListOfTables();
+    if (fillComboboxWithAListOfTables())
+        fillTableViewWithTheCurrentTableData(ui->comboBox_tables_list->currentText());
 }
 
 TablesWindow::~TablesWindow()
@@ -46,4 +47,22 @@ bool TablesWindow::fillComboboxWithAListOfTables()
     }
 
     return false;
+}
+
+// Событие на изменение выбранного элемента combobox
+void TablesWindow::on_comboBox_tables_list_currentTextChanged(const QString &arg1)
+{
+    QString current_table_name = arg1;
+    fillTableViewWithTheCurrentTableData(current_table_name);
+}
+
+// Метод получения данных выбранной таблицы БД
+void TablesWindow::fillTableViewWithTheCurrentTableData(QString table_name) {
+    QSqlTableModel *current_table_modal = new QSqlTableModel;
+    current_table_modal->setTable(table_name);
+    current_table_modal->select();
+    ui->tableView_db->setModel(current_table_modal);
+
+    // Задание размера столбцов относительно ширины элемента tableView_db
+    ui->tableView_db->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
