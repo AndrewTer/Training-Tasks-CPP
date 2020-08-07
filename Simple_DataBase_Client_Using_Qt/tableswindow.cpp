@@ -57,7 +57,8 @@ void TablesWindow::on_comboBox_tables_list_currentTextChanged(const QString &arg
 }
 
 // Метод получения данных выбранной таблицы БД
-void TablesWindow::fillTableViewWithTheCurrentTableData(QString table_name) {
+void TablesWindow::fillTableViewWithTheCurrentTableData(QString table_name) 
+{
     QSqlTableModel *current_table_modal = new QSqlTableModel;
     current_table_modal->setTable(table_name);
     current_table_modal->select();
